@@ -7,7 +7,7 @@
   };
 
   outputs = { self, nixpkgs, utils }:
-    utils.lib.eachDefaultSystem (system:
+    utils.lib.eachSystem utils.lib.allSystems (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
